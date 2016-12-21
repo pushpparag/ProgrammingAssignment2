@@ -1,7 +1,8 @@
 ## This file contains functions to calculate the inverse of a matrix and cache it.
 ## If a cached copy is present, then it is pulled instead of doing the same calculations all over again.
 
-## Write a short comment describing this function
+## The makeCacheMatrix function deals with the actual cached data.
+## It has 4 objects which, when called by cacheSolve function, either retrieve or set a cached copy of the matrix/inverse.
 
 makeCacheMatrix <- function(x = matrix()) {
     inv<-NULL
@@ -19,7 +20,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## The cacheSolve function either calculates the inverse of the matrix,
+## or if a cached copy is present, retrieves it.
+## It does so by calling the objects (functions) created by makeCacheMatrix function.
 
 cacheSolve <- function(x, ...) {
     inv <- x$getinv()
